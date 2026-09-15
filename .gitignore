@@ -1,0 +1,16 @@
+# Build outputs
+*.exe
+*.linux
+*.out
+/bin/
+/dist/
+clubhouse-server
+
+# Raw captures
+*.bin
+
+# Secrets and local config
+.env
+*.pem
+*.key
+*.pfx
