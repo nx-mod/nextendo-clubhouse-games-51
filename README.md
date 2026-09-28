@@ -1,34 +1,12 @@
-# clubhouse-games-51
+# nextendo-clubhouse-games-51 (nx-mod testing)
 
-Nextendo Network server for **Clubhouse Games: 51 Worldwide Classics** (Nintendo Switch), update 2.0.1.
+nx-mod's `testing` fork of [clubhouse-games-51](https://github.com/NextendoNetwork/clubhouse-games-51): Clubhouse Games: 51 Worldwide Classics NEX server on the nextendo-nex core.
+Part of [nextendo-testing](https://github.com/nx-mod/nextendo-testing): the whole Nextendo Network, run on a LAN. Upstream's README is kept as [README.upstream.md](README.upstream.md).
 
-| | |
-|---|---|
-| Title ID | `010047700D540000` |
-| Game server ID | `2035BB00` (SNI `g2035bb00-lp1.s.n.srv.nintendo.net`) |
-| Access key | `8c3661ff` |
-| NEX version | unconfirmed (`40605` default) |
+## nx-mod changes
 
-The game server ID comes from the hostname the game resolves when entering Online Play. The access
-key is not in any public list. It was recovered on 2026-09-15 from one real PRUDP CONNECT
-signature captured against a placeholder key: the signature is
-`HMAC-MD5(MD5(accessKey), MD5(accessKey)+connectionSig)`, so a search over all 2^32 8-hex-digit
-keys found exactly one match, after first confirming the connection signature against the
-server's own expected value.
+None: `testing` tracks upstream unchanged.
 
-## Servers
+## Credits
 
-- auth `:8460` (TicketGranting, behind the SNI router on `:443`)
-- secure `:61001` (SecureConnection, MatchmakeExtension, MatchMaking, MatchMakingExt, NATTraversal, Utility, Ranking)
-- dashboard `:8096` (`/api/stats`, `/api/kick`, token-gated)
-
-## Configuration
-
-Copy `example.env` to `.env`. Every unconfirmed wire value is an env var (`CLUBHOUSE_*`), so a wrong
-guess costs a restart, not a rebuild. Builds against a sibling `../nextendo-nex` checkout.
-
-## Disclaimer
-
-This server ships no Nintendo code, keys, or copyrighted assets. It is an independent
-reimplementation for use with a community-run replacement service, not affiliated with, endorsed
-by, or associated with Nintendo.
+clubhouse-games-51 is the work of the **Nextendo Network team** — https://nextendo.network. nx-mod only adds the changes above, for LAN testing. Nextendo is awesome.
